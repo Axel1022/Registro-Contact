@@ -14,12 +14,16 @@ $(function () {
     Limpiar();
   });
   $("#contact-container").on("click", ".btn-delete", function () {
-    const contenDinamic = $(this).closest("div#agregadoDinamicamente");
-    contenDinamic.remove();
+    if (confirm("Estas seguro que desea eliminar este contacto ")) {
+     const contenDinamic = $(this).closest("div#agregadoDinamicamente");
+     contenDinamic.remove();
+    }
+
   });
   //#endregion
 
   //#region  Funciones
+
   function CreateHtmlContactType() {
     const content = `
       <div class="col-4" id="agregadoDinamicamente">
